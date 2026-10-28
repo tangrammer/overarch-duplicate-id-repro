@@ -1,0 +1,5 @@
+;; A vector, so the elements are read in this order.
+[{:el :system :id :repro/a :name "A"}
+ {:el :system :id :repro/b :name "B"}
+ {:el :container :id :repro/twice :name "Twice"}
+ {:el :rel :id :repro/a-uses-b :from :repro/a :to :repro/b}]
