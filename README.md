@@ -1,5 +1,24 @@
 # Overarch: a duplicate id empties the id index
 
+**Fixed in Overarch 0.44.0** ([#52](https://github.com/soulspace-org/overarch/issues/52)).
+On 0.44.0 the same model reports the duplicate and nothing else:
+
+```sh
+clojure -Sdeps '{:deps {org.soulspace.clj/overarch {:mvn/version "0.44.0"}}}' \
+  -M -m org.soulspace.overarch.adapter.ui.cli -m models
+```
+
+```
+{:build-problems
+ ({:type :duplicate-id,
+   :element {:el :container, :id :repro/twice, :name "Twice, renamed"},
+   :parent nil}),
+ :unresolved-refs-in-views (),
+ :unresolved-refs-in-relations ()}
+```
+
+The rest of this README is the report as written against 0.43.0.
+
 Overarch 0.43.0, its own CLI, nothing else.
 
 ```sh
